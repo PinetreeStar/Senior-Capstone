@@ -2,7 +2,9 @@
 <!--//JS document.cookie = ("name" + "=" + JSON.stringify(array)) and JSON.parse(document.cookie("name"))-->
 <?php
 if (isset($_GET['send'])){
-	$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
+	//$conn = pg_connect("host=fleet-management-database.csg5vowywacr.us-east-2.rds.amazonaws.com port=5432 dbname=postgres user=postgres password=FleetRocks");
+	//$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
+	$conn = pg_connect("host=avl.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=cmartens");
 	$allCarts = pg_fetch_all_columns(pg_query($conn, "SELECT cart FROM battery_measurements;"));
 	$graphTables = array("battery_measurements", "battery_percentages");
 	$chartTables = array("cart_location");
@@ -136,12 +138,11 @@ if (isset($_GET['send'])){
 	<head>
 		<meta charset="utf-8">
 		<title>Mobile Microgrid Admin</title>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	</head>
 	<?php
 		//$conn = pg_connect("host=fleet-management-database.csg5vowywacr.us-east-2.rds.amazonaws.com port=5432 dbname=postgres user=postgres password=FleetRocks");
-		$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
-		//$conn = pg_connect("host=avl.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=cmartens");
+		//$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
+		$conn = pg_connect("host=avl.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=cmartens");
 
 		if (!$conn){
 			echo "An error has occured. 1";

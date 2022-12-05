@@ -1,5 +1,7 @@
 <?php
-	$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
+	//$conn = pg_connect("host=fleet-management-database.csg5vowywacr.us-east-2.rds.amazonaws.com port=5432 dbname=postgres user=postgres password=FleetRocks");
+	//$conn = pg_connect("host=dbclass.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=Pin1tr11Star");
+	$conn = pg_connect("host=avl.cs.unca.edu port=5432 dbname=cmartens user=cmartens password=cmartens");
 
 	if (!$conn){
 		echo "An error has occured";

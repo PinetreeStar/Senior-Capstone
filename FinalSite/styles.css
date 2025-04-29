@@ -1,0 +1,18 @@
+body {
+	display: grid;
+	background-color: #1ab6ff;
+}
+
+#infoFormSection {
+	display: flex;
+	justify-content: space-between;
+}
+
+#map{
+    width: 40vw;
+    height: 40vw;
+}
+
+.controls{
+    width: 6vw;
+}
